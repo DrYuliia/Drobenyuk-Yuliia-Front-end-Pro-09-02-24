@@ -1,13 +1,14 @@
 "use strict";
 //Дано масив з елементами різних типів. Створити функцію яка вираховує середнє арифметичне лише числових елементів даного масиву.
-let array = [1, 5, "/", "hello", "*", 2, "javaScript", 3];
+let array = [1, 5, "/", "hello", "*", NaN, 2, Infinity, "javaScript", 3];
 
 function arithmeticMean(arr) {
-    let result = [];
+    let result;
     let sum = 0;
     let count = 0;
     for (let i = 0; i < arr.length; i++) {
-        if (typeof arr[i] === 'number') {
+
+        if (typeof arr[i] === 'number' && !isNaN(arr[i]) && isFinite(arr[i])) {
             sum += arr[i];
             count++;
         }
@@ -52,7 +53,8 @@ function doMath(x, znak, y) {
             break;
         default:
             console.log("Invalid operator");
-    }return result;
+    }
+    return result;
 }
 console.log(`${x} ${znak} ${y} = ${doMath(x, znak, y)}`);
 
@@ -63,13 +65,18 @@ console.log(`${x} ${znak} ${y} = ${doMath(x, znak, y)}`);
 Значення всіх елементів всіх масивів задає користувач.*/
 let xNumber = Number(prompt("Enter number for first array", 5));
 let yNumber = Number(prompt("Enter number for second array", 3));
-let arSymbol = prompt("Enter symbol", "*");
-function twoDimensionalArray(xNumber, yNumber, arSymbol) {
-    let ar = new Array(xNumber).fill(new Array(yNumber).fill(arSymbol));
+
+function twoDimensionalArray(xNumber, yNumber) {
+    let ar = new Array(xNumber);
+    for (let i = 0; i < xNumber; i++) {
+        ar[i] = new Array(yNumber);
+        for (let j = 0; j < yNumber; j++) {
+            ar[i][j] = prompt(`Enter value for element at position (${i}, ${j})`);
+        }
+    }
     return ar;
-} console.log(twoDimensionalArray(xNumber, yNumber, arSymbol));
-
-
+}
+console.log(twoDimensionalArray(xNumber, yNumber));
 
 /*4.Створити функцію, яка прибирає з рядка всі символи, які ми передали другим аргументом.
 'func(" hello world", ['l', 'd'])' поверне нам "heo wor".
