@@ -16,7 +16,7 @@ function sumPositiveNumbers(a) {
     console.log("Kількість позитивних елементів: ", counter);
     return sumNumbers;
 }
-console.log("Cумa позитивних елементів: ", sumPositiveNumbers(array));
+console.log("1.Cумa позитивних елементів: ", sumPositiveNumbers(array));
 
 
 //2.Знайти мінімальний елемент масиву та його порядковий номер.
@@ -33,7 +33,7 @@ function minNumber(array) {
     console.log("Порядковий номер  мінімального числа масиву: ", ind);
     return min;
 }
-console.log("Mінімальний елемент масиву: ", minNumber(array));
+console.log("2.Mінімальний елемент масиву: ", minNumber(array));
 
 //3.Знайти максимальний елемент масиву та його порядковий номер.
 function maxNumber(array) {
@@ -49,7 +49,7 @@ function maxNumber(array) {
     console.log("Порядковий номер  максимального числа масиву: ", ind);
     return max;
 }
-console.log("Максимальний елемент масиву: ", maxNumber(array));
+console.log("3.Максимальний елемент масиву: ", maxNumber(array));
 
 //4.Визначити кількість негативних елементів.
 function NegativeNumber(array) {
@@ -63,7 +63,7 @@ function NegativeNumber(array) {
 
     return counter;
 }
-console.log("Kількість негативних елементів масиву: ", NegativeNumber(array));
+console.log("4.Kількість негативних елементів масиву: ", NegativeNumber(array));
 
 //5.Знайти кількість непарних позитивних елементів
 function oddPositiveNumbers(array) {
@@ -76,7 +76,7 @@ function oddPositiveNumbers(array) {
 
     return counter;
 }
-console.log("кількість непарних позитивних елементів: ", oddPositiveNumbers(array));
+console.log("5.Kількість непарних позитивних елементів: ", oddPositiveNumbers(array));
 
 //6.Знайти кількість парних позитивних елементів.
 function evenPositiveNumbers(array) {
@@ -89,7 +89,7 @@ function evenPositiveNumbers(array) {
 
     return counter;
 }
-console.log("Kількість парних позитивних елементів: ", evenPositiveNumbers(array));
+console.log("6.Kількість парних позитивних елементів: ", evenPositiveNumbers(array));
 
 //7.Знайти суму парних позитивних елементів
 
@@ -103,7 +103,7 @@ function sumEvenPositiveNumbers(array) {
 
     return sum;
 }
-console.log("Cумa парних позитивних елементів: ", sumEvenPositiveNumbers(array));
+console.log("7.Cумa парних позитивних елементів: ", sumEvenPositiveNumbers(array));
 
 
 //8.Знайти суму непарних позитивних елементів.
@@ -117,7 +117,7 @@ function sumOddPositiveNumbers(array) {
 
     return sum;
 }
-console.log("Cумa непарних позитивних елементів: ", sumOddPositiveNumbers(array));
+console.log("8. Cумa непарних позитивних елементів: ", sumOddPositiveNumbers(array));
 
 //9.Знайти добуток позитивних елементів.
 function multiplEvenPositiveNumbers(array) {
@@ -130,7 +130,7 @@ function multiplEvenPositiveNumbers(array) {
 
     return multipl;
 }
-console.log("Добуток позитивних елементів: ", multiplEvenPositiveNumbers(array));
+console.log("9. Добуток позитивних елементів: ", multiplEvenPositiveNumbers(array));
 
 //10.Знайти найбільший серед елементів масиву, остальні обнулити
 function nullArray(array) {
@@ -140,12 +140,12 @@ function nullArray(array) {
         if (array[i] > max) {
             max = array[i];
         }
-    }
-    for (let i = 0; i < array.length; i++) {
         if (array[i] !== max) {
             array[i] = 0;
         }
     }
+
+
     return array;
 }
-console.log("Обнулений масив: ", nullArray(array));
+console.log("10.Обнулений масив: ", nullArray(array));
