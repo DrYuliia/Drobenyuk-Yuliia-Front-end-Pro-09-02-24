@@ -3,7 +3,6 @@ const setNumber = () => {
     return function (num) {
         previousSum += num;
         console.log(previousSum);
-
     }
 
 }
