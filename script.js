@@ -1,34 +1,20 @@
-let veryGoodVotes = 0;
-let goodVotes = 0;
-let normal = 0;
-let bad = 0;
-let veryBad = 0;
+"use strict"
+let voteDiv = document.getElementById("vote_div");
+let voteParagraphs = voteDiv.querySelectorAll("p");
 
-function refreshResults() {
-    let results = document.getElementById('results');
-    results.innerHTML = ' ' + veryGoodVotes + '  ' +
-        '  ' + goodVotes + '  ' + normal + '  ' + bad + '  ' + veryBad;
+voteParagraphs.forEach(function (voteParagraph) {
+    voteParagraph.addEventListener("click", function (event) {
+        let target = event.currentTarget.querySelector("span");
+
+        if (target && target.tagName === 'SPAN') {
+            voteCounter(target);
+        }
+    });
+});
+
+function voteCounter(element) {
+    let currentValue = parseInt(element.dataset.counter) || 0;
+    currentValue++;
+    element.dataset.counter = currentValue;
+    element.textContent = currentValue;
 }
-
-document.getElementById('very_good').addEventListener('click', function () {
-    veryGoodVotes++;
-    refreshResults();
-});
-
-document.getElementById('good').addEventListener('click', function () {
-    goodVotes++;
-    refreshResults();
-});
-
-document.getElementById('normal').addEventListener('click', function () {
-    normal++;
-    refreshResults();
-});
-document.getElementById('bad').addEventListener('click', function () {
-    bad++;
-    refreshResults();
-});
-document.getElementById('very_bad').addEventListener('click', function () {
-    veryBad++;
-    refreshResults();
-});
