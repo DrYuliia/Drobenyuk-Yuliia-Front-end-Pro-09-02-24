@@ -17,9 +17,38 @@ li {
   align-items: center;
 }
 
-.box {
-  min-width: 100px;
-}
 .h {
   display: none;
+}
+
+*,
+li {
+  list-style-type: none;
+}
+.hidden {
+  display: none;
+  width: 100px;
+  padding: 10px;
+}
+.show {
+  display: block;
+  width: 200px;
+  padding: 10px;
+}
+.store {
+  display: inline-block;
+}
+
+.h {
+  display: none;
+}
+
+.box {
+  margin-top: 10px;
+  display: flex;
+  flex-direction: row;
+}
+
+#products {
+  margin-right: 10px;
 }

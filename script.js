@@ -32,31 +32,17 @@ products.addEventListener("click", function (event) {
 });
 
 function showProductInfo(productName, productType) {
+    const products = ["product1", "product2", "product3", "product4"];
 
-    if (productType === "product1") {
-        document.getElementById("product1").classList.add("show");
-        document.getElementById("product2").classList.remove("show");
-        document.getElementById("product3").classList.remove("show");
-        document.getElementById("product4").classList.remove("show");
-    }
-    if (productType === "product2") {
-        document.getElementById("product2").classList.add("show");
-        document.getElementById("product1").classList.remove("show");
-        document.getElementById("product3").classList.remove("show");
-        document.getElementById("product4").classList.remove("show");
-    }
-    if (productType === "product3") {
-        document.getElementById("product3").classList.add("show");
-        document.getElementById("product1").classList.remove("show");
-        document.getElementById("product2").classList.remove("show");
-        document.getElementById("product4").classList.remove("show");
-    }
-    if (productType === "product4") {
-        document.getElementById("product4").classList.add("show");
-        document.getElementById("product1").classList.remove("show");
-        document.getElementById("product3").classList.remove("show");
-        document.getElementById("product2").classList.remove("show");
-    }
+    products.forEach((product) => {
+        const element = document.getElementById(product);
+        if (product === productType) {
+            element.classList.add("show");
+        } else {
+            element.classList.remove("show");
+        }
+    });
+
     productInfo.innerHTML = `
         <p>Товар: <strong>${productName}</strong></p>
         <button id="buy-button">Купити</button>
@@ -65,9 +51,6 @@ function showProductInfo(productName, productType) {
     document.getElementById("buy-button").addEventListener("click", function () {
         buyProduct(productName);
     });
-
-    // Показати додаткову інформацію про товар
-    document.getElementById("product-details").classList.remove("hidden");
 }
 
 function buyProduct(productName) {
