@@ -5,13 +5,56 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Java Script template</title>
+    <title>JavaScript Template</title>
     <link rel="stylesheet" href="style.css">
-    <script src="script.js"></script>
 </head>
 
 <body>
+    <div id="container">
+        <div id="categories" class="categories box">
+            <ul>
+                <li id="books" data-category="books">Books</li>
+                <li id="cars" data-category="cars">Cars</li>
+            </ul>
+        </div>
+        <div id="products" class="products box product">
+            <ul class="books hidden" data-books>
+                <li data-product="product1">Пригоди Шерлока Холмса</li>
+                <li data-product="product2">Убивство за абеткою</li>
+            </ul>
+            <ul class="cars hidden products product" data-cars>
+                <li data-product="product3">BMW</li>
+                <li data-product="product4">Audi</li>
+            </ul>
+        </div>
+        <div id="product1" class="hidden product">
+            <p>Збірка оповідань <br>
+                Артура Конана Дойла,<br>
+                містить 12 детективних історій<br>
+                <strong>Prise:12$</strong>
+            </p>
+        </div>
+        <div id="product2" class="hidden product">
+            <p>роман англійської письменниці<br> Агати Кристі 1936 року<br>
+                <strong>Prise:12$</strong>
+            </p>
+        </div>
+        <div id="product3" class="hidden product">
+            <p>Автомобіль класу SUV <br>німецької компанії BMW<br>
+                <strong>Prise:140 000$</strong>
+            </p>
+        </div>
+        <div id="product4" class="hidden product">
+            <p>Audi A8 — великий чотирьохдверний<br>
+                автомобіль-седан класу «люкс»
+                <strong>Prise:150 000$</strong>
+            </p>
+        </div>
 
+        <div id="product-info"></div>
+
+    </div>
+    <script src="script.js"></script>
 </body>
 
 </html>

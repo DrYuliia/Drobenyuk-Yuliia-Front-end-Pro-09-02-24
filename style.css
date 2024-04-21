@@ -1,0 +1,25 @@
+*,
+li {
+  list-style-type: none;
+}
+.hidden {
+  display: none;
+}
+.show {
+  display: block;
+}
+.store {
+  display: inline-block;
+}
+#container {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.box {
+  min-width: 100px;
+}
+.h {
+  display: none;
+}
