@@ -32,31 +32,17 @@ products.addEventListener("click", function (event) {
 });
 
 function showProductInfo(productName, productType) {
+    const products = ["product1", "product2", "product3", "product4"];
 
-    if (productType === "product1") {
-        document.getElementById("product1").classList.add("show");
-        document.getElementById("product2").classList.remove("show");
-        document.getElementById("product3").classList.remove("show");
-        document.getElementById("product4").classList.remove("show");
-    }
-    if (productType === "product2") {
-        document.getElementById("product2").classList.add("show");
-        document.getElementById("product1").classList.remove("show");
-        document.getElementById("product3").classList.remove("show");
-        document.getElementById("product4").classList.remove("show");
-    }
-    if (productType === "product3") {
-        document.getElementById("product3").classList.add("show");
-        document.getElementById("product1").classList.remove("show");
-        document.getElementById("product2").classList.remove("show");
-        document.getElementById("product4").classList.remove("show");
-    }
-    if (productType === "product4") {
-        document.getElementById("product4").classList.add("show");
-        document.getElementById("product1").classList.remove("show");
-        document.getElementById("product3").classList.remove("show");
-        document.getElementById("product2").classList.remove("show");
-    }
+    products.forEach((product) => {
+        const element = document.getElementById(product);
+        if (product === productType) {
+            element.classList.add("show");
+        } else {
+            element.classList.remove("show");
+        }
+    });
+
     productInfo.innerHTML = `
         <p>Товар: <strong>${productName}</strong></p>
         <button id="buy-button">Купити</button>
@@ -66,20 +52,65 @@ function showProductInfo(productName, productType) {
         buyProduct(productName);
     });
 
-    // Показати додаткову інформацію про товар
-    document.getElementById("product-details").classList.remove("hidden");
+
 }
 
+
+
 function buyProduct(productName) {
-    alert(`Товар "${productName}" куплений!`);
+    let form = document.getElementById("form-buy");
+    form.classList.remove("hidden");
+    document.getElementById("buy-button").classList.add("hidden");
 
-    // Очистити блок з інформацією про товар
-    productInfo.innerHTML = "";
-
-    // Приховати всі елементи продуктів
     let allProducts = document.querySelectorAll(".product");
     allProducts.forEach(function (product) {
         product.classList.add("h");
     });
+
+
+
+
+    document.querySelector('.form-buy').addEventListener('submit', function (event) {
+        event.preventDefault();
+
+
+        let formData = new FormData(this);
+        let name = formData.get('name');
+        let city = formData.get('city');
+        let post = formData.get('post');
+        let payment = formData.get('payment');
+        let counter = formData.get('counter');
+        let coment = formData.get('coment');
+
+
+        if (!name || !city || !post || !payment || !counter) {
+
+            document.getElementById('error-message').style.display = 'block';
+            return;
+        } else {
+
+            document.getElementById('error-message').style.display = 'none';
+        }
+
+
+
+        let deliveryInfo = document.getElementById('delivery-info');
+
+
+        deliveryInfo.innerHTML = `
+      
+        <h2>Order Summary</h2><br>
+        <p>Товар: <strong>${productName} </strong></p>
+        <p>Кількість товару: <strong>${counter}</strong></p>
+        <p>ПІБ: <strong>${name}</strong></p>
+        <p>Місто: <strong>${city}</strong></p>
+        <p>Склад Нової Пошти: <strong>${post}</strong></p>
+        <p>Спосіб оплати: <strong>${payment}</strong></p>
+        <p>Коментар: <strong>${coment}</strong></p>
+    `;
+
+        document.getElementById('form-buy').classList.add('hidden');
+    });
+
 }
 
