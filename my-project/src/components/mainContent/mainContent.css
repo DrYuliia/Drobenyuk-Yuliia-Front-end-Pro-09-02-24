@@ -1,0 +1,9 @@
+.MainContent {
+  max-width: 800px;
+  color: black;
+}
+p {
+  color: darkblue;
+  font-size: 14px;
+  text-align: left;
+}
