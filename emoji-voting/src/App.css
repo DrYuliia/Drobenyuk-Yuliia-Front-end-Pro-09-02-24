@@ -1,0 +1,35 @@
+.App {
+  text-align: center;
+}
+
+.emoji-list {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  margin: 20px 0;
+}
+
+.emoji-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.emoji {
+  font-size: 2rem;
+  cursor: pointer;
+}
+
+.votes {
+  margin-top: 10px;
+}
+
+button {
+  padding: 10px 20px;
+  font-size: 1rem;
+  cursor: pointer;
+}
+
+h2 {
+  margin-top: 20px;
+}
