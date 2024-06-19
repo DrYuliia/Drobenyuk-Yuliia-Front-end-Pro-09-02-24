@@ -1,0 +1,116 @@
+/* Загальні стилі для всього додатку */
+$background-color: #f4f4f9;
+$header-bg-color: #282c34;
+$header-text-color: #61dafb;
+$form-bg-color: white;
+$form-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+$input-border-color: #ccc;
+$input-focus-border-color: #61dafb;
+$input-focus-shadow: 0 0 8px rgba(0, 123, 255, 0.5);
+$button-bg-color: #61dafb;
+$button-hover-bg-color: #21a1f1;
+$error-color: red;
+
+.App {
+  text-align: center;
+  font-family: "Roboto", sans-serif;
+  background-color: $background-color;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+}
+
+.App-header {
+  background-color: $header-bg-color;
+  padding: 20px;
+  border-radius: 12px;
+  box-shadow: $form-shadow;
+  margin-bottom: 20px;
+
+  h1 {
+    color: $header-text-color;
+    margin: 0;
+    font-size: 2.5rem;
+    font-weight: 300;
+  }
+}
+
+form {
+  background: $form-bg-color;
+  padding: 40px;
+  border-radius: 12px;
+  box-shadow: $form-shadow;
+
+  max-width: 400px;
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+
+  label {
+    margin-bottom: 8px;
+    color: #333;
+    font-weight: 500;
+    text-align: left;
+    width: 100%;
+  }
+
+  input {
+    padding: 15px;
+    margin-bottom: 20px;
+    border-radius: 8px;
+    border: 1px solid $input-border-color;
+    font-size: 1rem;
+    width: calc(100% - 30px);
+    transition: border-color 0.3s, box-shadow 0.3s;
+
+    &:focus {
+      outline: none;
+      border-color: $input-focus-border-color;
+      box-shadow: $input-focus-shadow;
+    }
+  }
+
+  button {
+    padding: 15px 30px;
+    margin-top: 20px;
+    border: none;
+    border-radius: 8px;
+    background-color: $button-bg-color;
+    color: white;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+
+    &:hover {
+      background-color: $button-hover-bg-color;
+      transform: translateY(-3px);
+    }
+
+    &:disabled {
+      background-color: #cccccc;
+      cursor: not-allowed;
+      transform: none;
+    }
+  }
+
+  div div {
+    color: $error-color;
+    font-size: 0.875rem;
+    margin-top: -15px;
+    margin-bottom: 10px;
+    text-align: left;
+  }
+
+  div {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+
+    & + div {
+      margin-top: 15px;
+    }
+  }
+}
